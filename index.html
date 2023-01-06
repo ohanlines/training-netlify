@@ -18,6 +18,11 @@
         -->
         <div data-netlify-identity-button>Login with Netlify Identity</div>
 
+        <!-- button testing -->
+        <button id="fetch-btn">Fetch</button>
+        <button id="poke-btn">Fetch POKE_API</button>
+        <p id="output-btn">Initial p tag</p>
+
         <form>
           <label for="counter">Counter:</label><br />
           <input type="text" id="counter" value="0" /><br />
@@ -25,6 +30,26 @@
         </form>
 
         <script>
+          // === button testing script ===
+          document.addEventListener('DOMContentLoaded', () => {
+              
+              const fetchBtn = document.getElementById('fetch-btn')
+              const pokeBtn = document.getElementById('poke-btn')
+              const outputTxt = document.getElementById('output-btn')
+
+              pokeBtn.addEventListener('click', async () => {
+                  const response = await fetch('/.netlify/functions/pokedex').then(response => response.json())
+
+                  outputTxt.innerText = JSON.stringify(response)
+              })
+              fetchBtn.addEventListener('click', async () => {
+                  const response = await fetch('/.netlify/functions/hello').then(response => response.json())
+
+                  outputTxt.innerText = JSON.stringify(response)
+              })
+          })
+          
+          // === Increment Function ===
           function incrementCounter() {
               // Get the current value of the counter input field
               var counter = document.getElementById("counter");
