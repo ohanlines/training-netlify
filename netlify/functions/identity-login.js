@@ -1,4 +1,4 @@
-
+/*
 exports.handler = async function (event, context) {
     const { identity, user } = context.clientContext;
     // Do stuff and return a response...
@@ -10,8 +10,9 @@ exports.handler = async function (event, context) {
         body: JSON.stringify({ user: user, identity: identity }),
     };
 };
+*/
 
-/*
+
 const netlifyIdentity = require('netlify-identity-widget')
 
 netlifyIdentity.init()
