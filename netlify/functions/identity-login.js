@@ -1,6 +1,20 @@
 const netlifyIdentity = require('netlify-identity-widget')
 
 exports.handler = async (event, context) => {
+    console.log("=== CONSOLE LOG ===")
+    console.log("\n=== EVENT ===\n")
+    console.log(event)
+
+    console.log("\n=== CONTEXT ===\n")
+    console.log(context)
+    return {
+        statusCode: 200,
+
+    }
+}
+
+/*
+exports.handler = async (event, context) => {
   netlifyIdentity.init()
 
   const currentUser = netlifyIdentity.currentUser()
@@ -14,6 +28,7 @@ exports.handler = async (event, context) => {
     body: 'Identity widget initialized'
   }
 }
+*/
 
 /*
  // === TypeScript Code ===
