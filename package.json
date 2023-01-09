@@ -1,12 +1,12 @@
 {
   "dependencies": {
     "mysql2": "^2.3.3",
+    "netlify-identity-widget": "^1.9.2",
     "node-fetch": "^3.3.0"
   },
   "name": "training-netlify",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
