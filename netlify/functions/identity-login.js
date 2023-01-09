@@ -1,3 +1,22 @@
+const netlifyIdentity = require('netlify-identity-widget')
+
+exports.handler = async (event, context) => {
+  netlifyIdentity.init()
+
+  const currentUser = netlifyIdentity.currentUser()
+  console.log(currentUser)
+
+  netlifyIdentity.on('login', user => console.log('Logged in', user))
+  netlifyIdentity.on('logout', () => console.log('Logged out'))
+
+  return {
+    statusCode: 200,
+    body: 'Identity widget initialized'
+  }
+}
+
+/*
+ // === TypeScript Code ===
 import { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
 
 const handler: Handler = async function (event: HandlerEvent, context: HandlerContext) {
@@ -11,5 +30,4 @@ const handler: Handler = async function (event: HandlerEvent, context: HandlerCo
         //body: JSON.stringify({ url: user.url, email: identity.email }),
     };
 };
-
-export { handler };
+*/
