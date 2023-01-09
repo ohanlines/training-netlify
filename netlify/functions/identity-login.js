@@ -3,10 +3,10 @@ const netlifyIdentity = require('netlify-identity-widget')
 exports.handler = async (event, context) => {
     console.log("=== CONSOLE LOG ===")
     console.log("\n=== EVENT ===\n")
-    console.log(event)
+    console.log(JSON.stringify(event))
 
     console.log("\n=== CONTEXT ===\n")
-    console.log(context)
+    console.log(JSON.stringify(context))
     return {
         statusCode: 200,
 
